@@ -51,6 +51,7 @@ public class CommonService {
     public Response delete(Map<String, String> requestBody, String endpoint) {
         RequestSpecification requestSpecification = RestAssured.given();
         requestSpecification.body(requestBody);
+        LoggerUtility.requestLogs(requestSpecification, endpoint, "DELETE");
         return performRequest("DELETE", requestSpecification, endpoint);
     }
 
