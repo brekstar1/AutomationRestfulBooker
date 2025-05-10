@@ -12,7 +12,7 @@ public class DriverService {
 
     public void prepareDriver(){
         driver = new ChromeDriver();
-        driver.get("https://demoqa.com/login");
+        driver.get("https://restful-booker.herokuapp.com");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
