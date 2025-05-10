@@ -8,7 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ElementHelper {
+
     private WebDriver driver;
+    public ElementHelper(WebDriver driver) {
+        this.driver = driver;
+    }
 
     private void waitForVisibleLocator(By locator){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
