@@ -23,7 +23,7 @@ public class Hooks {
 
     @AfterMethod(onlyForGroups = {AtfSuite.FE_SUITE, AtfSuite.E2E_SUITE})
     public void clearFeEnvironment() {
-        driverService.quitDriver();
+        //driverService.quitDriver();
     }
 
     @AfterMethod(alwaysRun = true)
