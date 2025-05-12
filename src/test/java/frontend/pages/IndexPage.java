@@ -19,4 +19,14 @@ public class IndexPage extends BasePage{
         elementHelper.clickJSLocator(IndexLocators.bookRoomOneElement);
         LoggerUtility.infoLog("The user click on Book now button.");
     }
+
+    public void clickDoubleBookNowButton(){
+        elementHelper.clickJSLocator(IndexLocators.bookRoomTwoElement);
+        LoggerUtility.infoLog("The user click on Book now button.");
+    }
+
+    public void clickSuiteBookNowButton(){
+        elementHelper.clickJSLocator(IndexLocators.bookRoomThreeElement);
+        LoggerUtility.infoLog("The user click on Book now button.");
+    }
 }
