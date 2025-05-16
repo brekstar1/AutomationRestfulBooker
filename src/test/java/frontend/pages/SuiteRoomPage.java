@@ -2,6 +2,7 @@ package frontend.pages;
 
 import frontend.pageLocators.SuiteRoomLocators;
 import loggerUtility.LoggerUtility;
+import modelObject.frontend.BookingSuiteRoomModel;
 import org.openqa.selenium.WebDriver;
 
 public class SuiteRoomPage extends BasePage{
@@ -9,17 +10,17 @@ public class SuiteRoomPage extends BasePage{
         super(driver);
     }
 
-    public void makeReservation(){
+    public void makeReservation(BookingSuiteRoomModel testData){
         elementHelper.clickJSLocator(SuiteRoomLocators.reserveNowButtonXpath);
         LoggerUtility.infoLog("The user clicks on Reserve now button.");
-        elementHelper.fillLocator(SuiteRoomLocators.firstNameElement,"Andrei");
-        LoggerUtility.infoLog("The user fills First Name with value: Andrei");
-        elementHelper.fillLocator(SuiteRoomLocators.lastNameElement,"Matei");
-        LoggerUtility.infoLog("The user fills Last Name with value: Matei");
-        elementHelper.fillLocator(SuiteRoomLocators.emailElement,"test123@test.com");
-        LoggerUtility.infoLog("The user fills Email with value: test123@test.com");
-        elementHelper.fillLocator(SuiteRoomLocators.phoneNumberElement,"08493847819");
-        LoggerUtility.infoLog("The user fills Email with value: 08493847819");
+        elementHelper.fillLocator(SuiteRoomLocators.firstNameElement,testData.getFirstnameValue());
+        LoggerUtility.infoLog("The user fills First Name with value: " + testData.getFirstnameValue());
+        elementHelper.fillLocator(SuiteRoomLocators.lastNameElement,testData.getLastnameValue());
+        LoggerUtility.infoLog("The user fills Last Name with value: " + testData.getLastnameValue());
+        elementHelper.fillLocator(SuiteRoomLocators.emailElement,testData.getEmailValue());
+        LoggerUtility.infoLog("The user fills Email with value: " + testData.getEmailValue());
+        elementHelper.fillLocator(SuiteRoomLocators.phoneNumberElement,testData.getPhoneValue());
+        LoggerUtility.infoLog("The user fills Phone number with value: " + testData.getPhoneValue());
 
         //need to implement selector for other days as the current day remains unavaible after the first reservation
 
