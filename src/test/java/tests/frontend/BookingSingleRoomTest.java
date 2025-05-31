@@ -26,9 +26,5 @@ public class BookingSingleRoomTest extends Hooks {
 
         //implement allure report with auto-delete old report
         //implement git actions
-
-        //implement 1 more backend test
-        //try to make an IndexPage check for img / no of elements
-
     }
 }
