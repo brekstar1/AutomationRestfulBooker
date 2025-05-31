@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-@Getter
+
 public class DriverService {
     private WebDriver driver;
 
@@ -19,5 +19,9 @@ public class DriverService {
 
     public void quitDriver(){
         driver.quit();
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }

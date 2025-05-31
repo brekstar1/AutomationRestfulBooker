@@ -54,7 +54,7 @@ public class LoggerUtility {
         return "Response STATUS CODE: " + response.getStatusCode();
     }
 
-    @SneakyThrows(JsonProcessingException.class)
+    /*@SneakyThrows(JsonProcessingException.class)
     private static String getRequestBody(RequestSpecification requestSpecification) {
         String requestBodyMessage = "Request BODY: \n";
 
@@ -65,7 +65,24 @@ public class LoggerUtility {
         }
 
         return requestBodyMessage;
+    }*/
+
+    private static String getRequestBody(RequestSpecification requestSpecification) {
+        String requestBodyMessage = "Request BODY: \n";
+
+        Object requestBody = ((RequestSpecificationImpl) requestSpecification).getBody();
+        if (requestBody != null) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            try {
+                requestBodyMessage += objectMapper.readTree(requestBody.toString()).toPrettyString();
+            } catch (JsonProcessingException e) {
+                requestBodyMessage += "Unable to parse request body: " + e.getMessage();
+            }
+        }
+
+        return requestBodyMessage;
     }
+
 
     private static String getResponseBody(Response response) {
         String responseBodyMessage = "Response BODY: \n";

@@ -25,6 +25,7 @@ public class BookingSingleRoomTest extends Hooks {
         //if "unavailable" click next (month) and retry
 
         //implement allure report with auto-delete old report
+        //build not working need, lombok broke for some reason, JSON read broke during build too...
         //implement git actions
     }
 }

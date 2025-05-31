@@ -1,12 +1,10 @@
 package modelObject.frontend;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Getter;
 
 import java.io.File;
 import java.io.IOException;
 
-@Getter
 public class BookingSuiteRoomModel {
 
     private String firstnameValue;
@@ -21,5 +19,21 @@ public class BookingSuiteRoomModel {
         } catch (IOException e) {
             throw new RuntimeException("Failed to load JSON file: " + jsonFilePath, e);
         }
+    }
+
+    public String getFirstnameValue() {
+        return firstnameValue;
+    }
+
+    public String getLastnameValue() {
+        return lastnameValue;
+    }
+
+    public String getEmailValue() {
+        return emailValue;
+    }
+
+    public String getPhoneValue() {
+        return phoneValue;
     }
 }
